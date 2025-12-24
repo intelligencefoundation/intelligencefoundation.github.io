@@ -1,24 +1,37 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr-CA">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Littératie en sécurité de l’IA — Fondation Intelligence</title>
-  <meta name="description" content="Programme éducatif public gratuit de la Fondation Intelligence : littératie en sécurité de l’IA. Modules structurés, exercices, auto-évaluations et ressources.">
+  <meta name="description" content="Programme éducatif public gratuit de la Fondation Intelligence : littératie en sécurité de l’IA. Modules structurés (objectifs, contenu, exercices, auto‑évaluations), séances publiques et documents de gouvernance.">
   <meta name="robots" content="index,follow">
   <style>
-    :root { --max: 980px; --border:#e6e6e6; --bg:#fafafa; --ink:#111; --muted:#555; }
+    :root {
+      --max: 980px;
+      --border:#e6e6e6;
+      --bg:#fafafa;
+      --ink:#111;
+      --muted:#555;
+      --link:#0b57d0;
+      --ok:#0a7a2f;
+      --warn:#8a5200;
+    }
+    html { scroll-behavior:smooth; }
     body { font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; margin:0; color:var(--ink); line-height:1.55; }
     header, footer { background:var(--bg); border-bottom:1px solid var(--border); }
     footer { border-top:1px solid var(--border); border-bottom:none; }
     .wrap { max-width:var(--max); margin:0 auto; padding: 1.25rem 1rem; }
-    h1,h2,h3 { line-height:1.2; }
+    h1,h2,h3,h4 { line-height:1.2; }
     h1 { margin:.7rem 0 .35rem; }
-    nav a { margin-right:.9rem; display:inline-block; padding:.15rem 0; color:#0b57d0; text-decoration:none; }
+    nav a { margin-right:.9rem; display:inline-block; padding:.15rem 0; color:var(--link); text-decoration:none; }
     nav a:hover { text-decoration:underline; }
     main { max-width:var(--max); margin:0 auto; padding: 1.25rem 1rem 3rem; }
     .note { border:1px solid var(--border); background:#fcfcfc; padding:1rem; border-radius:10px; }
     .pill { display:inline-block; padding:.15rem .55rem; border:1px solid var(--border); border-radius:999px; background:#fff; font-size:.9rem; color:var(--muted); }
+    .tag { display:inline-block; padding:.1rem .45rem; border:1px solid var(--border); border-radius:6px; background:#fff; font-size:.85rem; color:var(--muted); }
+    .good { color:var(--ok); }
+    .warn { color:var(--warn); }
     hr { border:0; border-top:1px solid var(--border); margin: 1.6rem 0; }
     table { width:100%; border-collapse:collapse; margin:.75rem 0; }
     th,td { border:1px solid var(--border); padding:.6rem; vertical-align:top; text-align:left; }
@@ -29,82 +42,115 @@
     .kpi span { border:1px solid var(--border); background:#fff; border-radius:10px; padding:.55rem .7rem; }
     .checklist li { margin:.2rem 0; }
     .mono { font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace; }
+    a { color:var(--link); }
+    img { max-width:100%; height:auto; border:1px solid var(--border); border-radius:10px; }
+    .skip { position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden; }
+    .skip:focus { position:static; width:auto; height:auto; padding:.4rem .6rem; background:#fff; border:1px solid var(--border); border-radius:8px; }
+    .back { margin-top:1rem; }
+    .back a { font-size:.95rem; }
+    blockquote { margin: .75rem 0; padding: .8rem 1rem; border-left: 4px solid var(--border); background:#fff; border-radius:10px; }
   </style>
 </head>
 <body>
+
+<a class="skip" href="#contenu">Aller au contenu principal</a>
 
 <header>
   <div class="wrap">
     <div>
       <strong>Fondation Intelligence / Intelligence Foundation</strong><br>
-      <small>Organisme de bienfaisance enregistré (NE / BN : 855938502 RR0001)</small>
+      <small>Organisme de bienfaisance enregistré (NE / BN : <span class="mono">855938502 RR0001</span>)</small>
     </div>
 
     <h1>Programme d’éducation du public — Littératie en sécurité de l’IA</h1>
 
     <p class="note">
-      <strong>Programme éducatif public gratuit</strong> (modules structurés, exercices, auto‑évaluations).<br>
-      <strong>Aucun contenu commercial</strong> : aucune publicité, aucune vente, aucun avantage privé.
+      <strong>Programme éducatif public gratuit</strong> (modules structurés : objectifs → contenu → exercices → auto‑évaluations).<br>
+      <strong>Aucun contenu commercial</strong> : aucune publicité, aucune vente, aucune sollicitation commerciale, aucun avantage privé.<br>
+      <strong>Collecte de données :</strong> aucune collecte volontaire de données personnelles sur ce site (pages statiques).
     </p>
 
-    <div class="kpi">
-      <span><strong>Date de mise en œuvre :</strong> <span class="mono">[AAAA‑MM‑JJ]</span></span>
-      <span><strong>Dernière mise à jour :</strong> <span class="mono">[AAAA‑MM‑JJ]</span></span>
-      <span><strong>Version publique :</strong> <span class="mono">v1.0</span></span>
+    <div class="kpi" aria-label="Informations de publication">
+      <span><strong>Date de mise en œuvre :</strong> <span class="mono">2025-12-17</span></span>
+      <span><strong>Dernière mise à jour :</strong> <span class="mono">2025-12-22</span></span>
+      <span><strong>Version publique :</strong> <span class="mono">v1.4</span></span>
+      <span><strong>Modules publiés :</strong> <span class="mono">0–6</span></span>
     </div>
 
     <nav aria-label="Navigation">
       <a href="#cadre">Objet & cadre</a>
       <a href="#plan">Plan de cours</a>
-      <a href="#module1">Module 1 (publié)</a>
+      <a href="#plan90">Plan 90 jours</a>
+      <a href="#module0">Module 0</a>
+      <a href="#module1">Module 1</a>
+      <a href="#module2">Module 2</a>
+      <a href="#module3">Module 3</a>
+      <a href="#module4">Module 4</a>
+      <a href="#module5">Module 5</a>
+      <a href="#module6">Module 6 (ASI)</a>
       <a href="#seances">Séances publiques</a>
+      <a href="#journal">Journal</a>
       <a href="#gouvernance">Gouvernance</a>
+      <a href="#documents">Documents</a>
       <a href="#versions">Historique</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
 
-<main>
+<main id="contenu">
 
   <section id="cadre">
     <h2>1) Objet et cadre</h2>
 
+    <h3>Alignement avec les fins (objet) de la Fondation</h3>
     <p>
-      Ce volet (« <strong>Littératie en sécurité de l’IA</strong> ») s’inscrit dans les
-      <strong>programmes éducatifs continus</strong> de la Fondation, actifs depuis sa constitution,
-      notamment : <em>Académie (réseau, formation et support)</em> et <em>Conférence</em>.
+      Ce volet (« <strong>Littératie en sécurité de l’IA</strong> ») est un <strong>programme éducatif public</strong> offert gratuitement
+      et s’inscrit dans les <strong>programmes éducatifs continus</strong> de la Fondation (formation du public, soutien et diffusion) tels que prévus depuis sa constitution.
     </p>
+
+    <blockquote>
+      <strong>Objet (extrait)</strong><br>
+      « À des fins purement philanthropiques, scientifiques, sociales, technologiques, artistiques, et sans intention de gain pécuniaire pour ses membres,
+      la Fondation Intelligence a pour objet de sensibiliser, d’inspirer, de former et de supporter les individus qui façonneront la société du 21<sup>e</sup> siècle. »
+    </blockquote>
 
     <div class="note">
       <p style="margin-top:0">
-        <span class="pill">But éducatif</span>
+        <span class="pill">Avancement de l’éducation</span>
         <span class="pill">Accès public</span>
         <span class="pill">Non‑commercial</span>
-        <span class="pill">Modules + exercices + évaluations</span>
+        <span class="pill">Instruction structurée</span>
+        <span class="pill">Exercices + corrigés</span>
       </p>
       <p>
-        <strong>But :</strong> aider le public à comprendre, utiliser et évaluer de manière responsable
-        des systèmes d’IA (bénéfices, limites, risques et pratiques de sécurité), dans l’intérêt public.
+        <strong>But éducatif :</strong> aider le public à comprendre, utiliser et évaluer de manière responsable des systèmes d’IA
+        (bénéfices, limites, risques et pratiques de sécurité), dans l’intérêt public.
       </p>
       <p style="margin-bottom:0">
-        <strong>Neutralité et rigueur :</strong> le programme privilégie des méthodes, définitions et exemples vérifiables,
-        et encourage la pensée critique (pas de promotion, pas de propagande, pas de prosélytisme).
+        <strong>Neutralité et rigueur :</strong> le programme privilégie des méthodes, définitions et exemples vérifiables et encourage la pensée critique
+        (pas de promotion, pas d’idéologie, pas de prosélytisme).
       </p>
     </div>
+
+    <h3>Programmes continus (extrait)</h3>
+    <p><small>Extrait d’une description de programmes continus : Académie (réseau, formation et support), Recherche sur l’intelligence, Conférence.</small></p>
+    <img src="assets/programmes_continus.png" alt="Extrait : Programmes continus — Académie, Recherche, Conférence">
 
     <h3>Public visé</h3>
     <ul>
       <li>Grand public, étudiants, enseignants, professionnels non spécialistes.</li>
-      <li>Prérequis : aucun. Les modules avancés sont optionnels.</li>
+      <li>Prérequis : aucun. Les modules avancés restent accessibles (exemples et définitions inclus).</li>
+      <li>Format : auto‑formation (lecture + exercice + quiz) et séances publiques gratuites.</li>
     </ul>
 
-    <h3>Résultats d’apprentissage (ce que vous saurez faire)</h3>
+    <h3>Résultats d’apprentissage (compétences)</h3>
     <ul>
       <li>Définir des notions clés (hallucination, biais, incertitude, robustesse, sécurité, alignement).</li>
       <li>Appliquer une méthode simple d’évaluation (objectif → scénarios → critères → décision).</li>
       <li>Reconnaître des risques typiques (information, sécurité, vie privée, dérives d’usage).</li>
-      <li>Choisir des garde‑fous pratiques (vérification, limites, supervision, journalisation).</li>
+      <li>Choisir des garde‑fous pratiques (vérification, limites, supervision, journalisation, escalade).</li>
+      <li>Comprendre l’utilité (et les limites) de l’interprétabilité et du red teaming dans la sécurité.</li>
     </ul>
 
     <h3>Mode d’apprentissage (comment suivre le programme)</h3>
@@ -112,8 +158,19 @@
       <li>Lisez un module : <strong>objectifs</strong> → <strong>contenu</strong> → <strong>exercice</strong> → <strong>quiz</strong>.</li>
       <li>Réalisez l’exercice et notez vos réponses (même brièvement).</li>
       <li>Comparez avec le <strong>corrigé</strong> et ajustez votre compréhension.</li>
-      <li>Conservez vos notes : cela constitue une trace d’apprentissage.</li>
+      <li>Conservez vos notes : cela constitue une trace d’apprentissage personnelle.</li>
     </ol>
+
+    <h3>Cadre de sécurité pédagogique (important)</h3>
+    <div class="note">
+      <p style="margin-top:0">
+        <strong>Le programme ne vise pas à enseigner des méthodes nuisibles ou illégales.</strong> Lorsque des exemples touchent des demandes à risque,
+        ils sont utilisés uniquement pour montrer <em>comment identifier le risque</em> et <em>comment refuser / rediriger vers des alternatives légitimes</em>.
+      </p>
+      <p style="margin-bottom:0">
+        En cas d’urgence ou de situation à risque réel, contactez les services appropriés (ex. autorités compétentes, professionnels qualifiés).
+      </p>
+    </div>
   </section>
 
   <hr>
@@ -133,59 +190,197 @@
       <tbody>
         <tr>
           <td><strong>0</strong></td>
-          <td>Orientation : glossaire, méthode, critères de qualité</td>
-          <td>10–15 min</td>
-          <td><strong>Publié</strong> (sur cette page)</td>
+          <td>Orientation : méthode, glossaire, critères de qualité, sécurité pédagogique</td>
+          <td>10–20 min</td>
+          <td><strong>Publié</strong> (<a href="#module0">voir</a>)</td>
         </tr>
         <tr>
           <td><strong>1</strong></td>
           <td>Fondamentaux : limites, erreurs, incertitude, risques et garde‑fous</td>
           <td>30–45 min</td>
-          <td><strong>Publié</strong> (ci‑dessous)</td>
+          <td><strong>Publié</strong> (<a href="#module1">voir</a>)</td>
         </tr>
         <tr>
           <td><strong>2</strong></td>
-          <td>Évaluation & audit : scénarios, critères, documentation, traces</td>
-          <td>30–45 min</td>
-          <td>À publier</td>
+          <td>Évaluation & audit : scénarios, critères, documentation, traces, décision</td>
+          <td>35–55 min</td>
+          <td><strong>Publié</strong> (<a href="#module2">voir</a>)</td>
         </tr>
         <tr>
           <td><strong>3</strong></td>
-          <td>Interprétabilité : objectifs, approches, limites (vue d’ensemble)</td>
-          <td>45–60 min</td>
-          <td>À publier</td>
+          <td>Interprétabilité : objectifs, types d’explications, limites, usage responsable</td>
+          <td>35–55 min</td>
+          <td><strong>Publié</strong> (<a href="#module3">voir</a>)</td>
         </tr>
         <tr>
           <td><strong>4</strong></td>
-          <td>Red teaming & sécurité opérationnelle : prévention, détection, escalade</td>
-          <td>30–45 min</td>
-          <td>À publier</td>
+          <td>Red teaming & sécurité opérationnelle : tests sûrs, classification, escalade, amélioration</td>
+          <td>35–55 min</td>
+          <td><strong>Publié</strong> (<a href="#module4">voir</a>)</td>
         </tr>
         <tr>
           <td><strong>5</strong></td>
-          <td>Gouvernance : contrôles, responsabilités, transparence, gestion des conflits</td>
-          <td>30–45 min</td>
-          <td>À publier</td>
+          <td>Gouvernance : direction & contrôle, conflits d’intérêts, tenue de registres, transparence</td>
+          <td>30–50 min</td>
+          <td><strong>Publié</strong> (<a href="#module5">voir</a>)</td>
+        </tr>
+      
+        <tr>
+          <td><strong>6</strong> <span class="tag">(optionnel)</span></td>
+          <td>ASI / superintelligence : concepts, incertitudes, scénarios, risques, garde‑fous et gouvernance (cadre éducatif prudent)</td>
+          <td>35–55 min</td>
+          <td><strong>Publié</strong> (<a href="#module6">voir</a>)</td>
         </tr>
       </tbody>
     </table>
 
     <p class="note">
-      <strong>Engagement de continuité :</strong> mises à jour mensuelles (historique daté) et publication des supports
+      <strong>Engagement de continuité :</strong> mises à jour mensuelles (historique daté) et publication progressive des supports
       (diapositives, fiches, quiz) pour chaque séance éducative.
     </p>
   </section>
 
   <hr>
 
+  <section id="plan90">
+    <h2>3) Plan de continuité (90 jours) — livrables publics</h2>
+    <p>
+      Ce plan précise des <strong>jalons datables</strong> pour démontrer la continuité d’un programme éducatif public.
+      Les dates exactes sont publiées dès qu’elles sont confirmées, et le <a href="#journal">journal public</a> est mis à jour après chaque livrable.
+    </p>
+
+    <div class="note">
+      <p style="margin-top:0"><strong>Objectif opérationnel :</strong> fournir une preuve simple et vérifiable que l’Organisme
+      <em>exerce activement</em> un programme éducatif public (modules structurés + diffusion + supports).</p>
+      <ul style="margin-bottom:0">
+        <li><strong>Dans les 7 jours :</strong> publier la date/heure du Webinaire 1 + lien YouTube + diapositives (PDF).</li>
+        <li><strong>Dans les 14 jours :</strong> tenir le Webinaire 1 (public) et publier la rediffusion + fiche (PDF) + quiz.</li>
+        <li><strong>Dans les 30 jours :</strong> publier un “bilan d’activité (1 page)” : modules publiés, séance(s) tenue(s), supports, et ressources utilisées.</li>
+        <li><strong>Dans les 60 jours :</strong> tenir le Webinaire 2 (atelier) + publier supports.</li>
+        <li><strong>Dans les 90 jours :</strong> mise à jour v1.3/v1.4 : ajout de nouveaux exercices, cas pratiques, et amélioration du glossaire.</li>
+              <li><strong>D’ici 75 jours (optionnel) :</strong> tenir une séance éducative publique dédiée « ASI / superintelligence » (cadre prudent) et publier la rediffusion + supports.</li>
+</ul>
+    </div>
+
+    <h3>Preuves publiques attendues (checklist)</h3>
+    <ul class="checklist">
+      <li>Liens vers modules (objectifs, exercices, corrigés, quiz).</li>
+      <li>Table “Séances publiques” remplie (date/heure, lien, supports).</li>
+      <li>Journal public mis à jour (entrée datée après chaque livrable).</li>
+      <li>Historique de versions (vX.Y, date, résumé des changements).</li>
+      <li>Documents de gouvernance accessibles (directive, résolution, modèles).</li>
+    </ul>
+  </section>
+
+
+  <section id="module0">
+    <h2>4) Module 0 — Orientation : méthode, glossaire et critères de qualité</h2>
+
+    <p>
+      <span class="pill">Niveau : introduction</span>
+      <span class="pill">Durée : 10–20 min</span>
+      <span class="pill">Version : v1.0</span>
+      <span class="pill">Publication : <span class="mono">2025-12-18</span></span>
+    </p>
+
+    <h3>Objectifs d’apprentissage</h3>
+    <p>À la fin du module, vous serez capable de :</p>
+    <ul>
+      <li>Expliquer la différence entre <strong>information</strong> (lecture) et <strong>instruction</strong> (apprentissage structuré).</li>
+      <li>Appliquer une méthode simple en 4 étapes pour évaluer un usage de l’IA.</li>
+      <li>Utiliser un glossaire minimal pour décrire des risques et des garde‑fous.</li>
+    </ul>
+
+    <h3>Contenu pédagogique</h3>
+
+    <h4>A. Pourquoi un programme structuré ?</h4>
+    <ul>
+      <li>Une liste d’articles “inspirants” peut être intéressante, mais ne prouve pas une formation structurée.</li>
+      <li>Un programme structuré inclut : objectifs, présentation progressive, exercices, auto‑évaluation, corrigé.</li>
+      <li>But : permettre au public de <em>répéter</em> une méthode et de <em>vérifier</em> sa compréhension.</li>
+    </ul>
+
+    <h4>B. Méthode en 4 étapes (réutilisable)</h4>
+    <ol>
+      <li><strong>Objectif</strong> : que veut‑on obtenir ? (ex. “résumer fidèlement”).</li>
+      <li><strong>Scénarios</strong> : dans quels cas ? (cas normal + cas difficile).</li>
+      <li><strong>Critères</strong> : comment juger ? (exactitude, prudence, transparence, vie privée).</li>
+      <li><strong>Décision</strong> : acceptable / acceptable avec garde‑fous / non acceptable.</li>
+    </ol>
+
+    <h4>C. Glossaire minimal (10 notions)</h4>
+    <table aria-label="Glossaire minimal">
+      <thead>
+        <tr>
+          <th>Terme</th>
+          <th>Définition (simple)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Système d’IA</strong></td><td>Outil qui produit des sorties (texte, image, etc.) à partir d’entrées.</td></tr>
+        <tr><td><strong>Hallucination</strong></td><td>Information fausse présentée comme vraie.</td></tr>
+        <tr><td><strong>Incertitude</strong></td><td>Le système ne “sait pas” ce qu’il ne sait pas; la confiance affichée peut être trompeuse.</td></tr>
+        <tr><td><strong>Biais</strong></td><td>Distorsion systématique due aux données, au contexte ou à la formulation.</td></tr>
+        <tr><td><strong>Robustesse</strong></td><td>Stabilité de la réponse quand l’entrée change légèrement.</td></tr>
+        <tr><td><strong>Risque</strong></td><td>Probabilité × gravité d’un dommage (erreur, abus, atteinte à la vie privée, etc.).</td></tr>
+        <tr><td><strong>Garde‑fou</strong></td><td>Mesure de réduction du risque (vérification, supervision, limites, journalisation).</td></tr>
+        <tr><td><strong>Audit</strong></td><td>Évaluation documentée : scénarios + critères + résultats + décision.</td></tr>
+        <tr><td><strong>Red teaming</strong></td><td>Tests organisés pour révéler des faiblesses; ici, uniquement dans un cadre sûr et légitime.</td></tr>
+        <tr><td><strong>Direction & contrôle</strong></td><td>La Fondation supervise ses activités (même si des prestataires aident).</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Exercice (10 minutes) — “Évaluer un usage”</h3>
+    <div class="note">
+      <p style="margin-top:0"><strong>Scénario :</strong> un enseignant veut utiliser un outil d’IA pour générer un résumé d’un chapitre et des questions de révision pour des étudiants.</p>
+      <p style="margin-bottom:0"><strong>Contrainte :</strong> le résumé doit être fidèle, et les questions doivent vérifier la compréhension sans introduire de fausses informations.</p>
+    </div>
+
+    <p><strong>Consignes :</strong></p>
+    <ol>
+      <li>Écrivez l’<strong>objectif</strong> en une phrase.</li>
+      <li>Proposez 3 <strong>scénarios</strong> (dont un “cas difficile”).</li>
+      <li>Choisissez 4 <strong>critères</strong> d’évaluation.</li>
+      <li>Décidez : acceptable / acceptable avec garde‑fous / non acceptable, et justifiez en 2 phrases.</li>
+    </ol>
+
+    <h4>Corrigé (exemple de réponse)</h4>
+    <ul>
+      <li><strong>Objectif :</strong> “Produire un résumé fidèle et des questions cohérentes, sans inventer d’informations.”</li>
+      <li><strong>Scénarios :</strong> (1) chapitre simple; (2) chapitre avec termes techniques; (3) chapitre avec chiffres/dates (cas difficile).</li>
+      <li><strong>Critères :</strong> exactitude factuelle; couverture des points clés; transparence (indiquer incertitudes); absence d’invention; qualité pédagogique des questions.</li>
+      <li><strong>Décision :</strong> <span class="good"><strong>acceptable avec garde‑fous</strong></span> : vérification par l’enseignant, comparaison au texte source, correction des erreurs, conserver une trace des modifications.</li>
+    </ul>
+
+    <h3>Auto‑évaluation (quiz)</h3>
+    <ol>
+      <li><strong>Vrai/Faux :</strong> un programme éducatif structuré comprend des exercices et un corrigé.</li>
+      <li><strong>Choix multiple :</strong> la “méthode en 4 étapes” commence par : a) critères • b) objectif • c) décision • d) humour</li>
+      <li><strong>Réponse courte :</strong> donnez 2 garde‑fous concrets pour l’usage en classe.</li>
+      <li><strong>Vrai/Faux :</strong> si l’outil est “bon en général”, il n’est pas nécessaire de tester des scénarios difficiles.</li>
+    </ol>
+
+    <h4>Réponses</h4>
+    <ol>
+      <li>Vrai.</li>
+      <li>b) objectif.</li>
+      <li>Exemples : vérification sur le texte source; supervision humaine; conserver une trace; limiter la portée; tester sur un cas difficile; corriger les erreurs avant diffusion.</li>
+      <li>Faux.</li>
+    </ol>
+
+    <p class="back"><a href="#contenu">↑ Retour en haut</a></p>
+  </section>
+
+  <hr>
+
   <section id="module1">
-    <h2>3) Module 1 — Fondamentaux de sécurité de l’IA (publié)</h2>
+    <h2>5) Module 1 — Fondamentaux de sécurité de l’IA</h2>
 
     <p>
       <span class="pill">Niveau : introduction</span>
       <span class="pill">Durée : 30–45 min</span>
       <span class="pill">Version : v1.0</span>
-      <span class="pill">Publication : <span class="mono">[AAAA‑MM‑JJ]</span></span>
+      <span class="pill">Publication : <span class="mono">2025-12-17</span></span>
     </p>
 
     <h3>Objectifs d’apprentissage</h3>
@@ -200,7 +395,7 @@
 
     <h4>A. Ce que fait un système d’IA (et ce qu’il ne fait pas)</h4>
     <ul>
-      <li>Un modèle d’IA produit des sorties (texte, image, code…) à partir d’entrées.</li>
+      <li>Un système d’IA produit des sorties (texte, image, code…) à partir d’entrées.</li>
       <li>Une réponse « convaincante » n’est pas une preuve : la forme ne garantit pas la vérité.</li>
       <li>Dans les contextes importants, il faut des garde‑fous (vérification, supervision, limites d’usage).</li>
     </ul>
@@ -209,27 +404,27 @@
     <ul>
       <li><strong>Hallucination :</strong> information fausse présentée comme vraie (ex. source inventée).</li>
       <li><strong>Biais :</strong> distorsion systématique due aux données, au contexte ou à la formulation.</li>
-      <li><strong>Incertitude :</strong> absence d’indicateur fiable de confiance (le modèle peut « sonner sûr » sans l’être).</li>
+      <li><strong>Incertitude :</strong> absence d’indicateur fiable de confiance (un modèle peut « sonner sûr » sans l’être).</li>
       <li><strong>Robustesse :</strong> sensibilité aux variations d’entrée (prompt, format, contexte).</li>
     </ul>
 
     <h4>C. Risques typiques (exemples)</h4>
     <ul>
       <li><strong>Informationnel :</strong> conseils inexacts (santé, droit, finance, technique).</li>
-      <li><strong>Sécurité :</strong> instructions facilitant un acte nuisible/illégal.</li>
+      <li><strong>Sécurité :</strong> assistance à un acte nuisible ou illégal.</li>
       <li><strong>Vie privée :</strong> divulgation ou inférence de données personnelles.</li>
       <li><strong>Dérives :</strong> automatisation non supervisée, décisions injustifiées, sur‑confiance.</li>
     </ul>
 
     <h4>D. Méthode d’évaluation en 4 étapes</h4>
     <ol>
-      <li><strong>Objectif :</strong> que veut-on obtenir ? (ex. “résumer sans inventer de faits”).</li>
+      <li><strong>Objectif :</strong> que veut-on obtenir ? (ex. « résumer sans inventer de faits »).</li>
       <li><strong>Scénarios :</strong> 3–5 cas d’usage, dont 1 cas difficile.</li>
       <li><strong>Critères :</strong> exactitude, prudence, transparence, respect de la vie privée.</li>
       <li><strong>Décision :</strong> acceptable / acceptable avec garde‑fous / non acceptable.</li>
     </ol>
 
-    <h3>Exercice (15 minutes)</h3>
+    <h3>Exercice (15 minutes) — Refus et alternatives légitimes</h3>
     <div class="note">
       <p style="margin-top:0"><strong>Question sensible :</strong> « Peux-tu me dire exactement quoi faire pour pirater le compte d’une personne ? »</p>
       <p><strong>Réponse A :</strong> « Voici une méthode étape par étape… »</p>
@@ -264,14 +459,604 @@
       <li>Faux.</li>
       <li>b) des critères explicites.</li>
       <li>Faux.</li>
-      <li>Exemples : vérifier via sources fiables; supervision humaine; limiter l’usage; conserver une trace d’utilisation; tester sur scénarios; demander les incertitudes/limites.</li>
+      <li>Exemples : vérifier via sources fiables; supervision humaine; limiter l’usage; conserver une trace; tester sur scénarios; demander les incertitudes/limites.</li>
     </ol>
+
+    <p class="back"><a href="#contenu">↑ Retour en haut</a></p>
+  </section>
+
+  <hr>
+
+  <section id="module2">
+    <h2>6) Module 2 — Évaluation & audit : scénarios, critères, documentation</h2>
+
+    <p>
+      <span class="pill">Niveau : intermédiaire (accessible)</span>
+      <span class="pill">Durée : 35–55 min</span>
+      <span class="pill">Version : v1.0</span>
+      <span class="pill">Publication : <span class="mono">2025-12-18</span></span>
+    </p>
+
+    <h3>Objectifs d’apprentissage</h3>
+    <p>À la fin du module, vous serez capable de :</p>
+    <ul>
+      <li>Construire un plan d’évaluation simple (objectif → scénarios → critères → décision).</li>
+      <li>Documenter une évaluation de manière utile (résultats, limites, garde‑fous, trace).</li>
+      <li>Décider d’un usage : <span class="good"><strong>acceptable</strong></span>, <span class="warn"><strong>acceptable avec garde‑fous</strong></span> ou <strong>non acceptable</strong>.</li>
+    </ul>
+
+    <h3>Contenu pédagogique</h3>
+
+    <h4>A. Pourquoi évaluer ?</h4>
+    <ul>
+      <li>Les performances varient selon le contexte : un outil peut être bon en général et mauvais sur un cas critique.</li>
+      <li>L’évaluation est une pratique de prudence : elle réduit le risque d’erreurs et d’abus.</li>
+      <li>Un “audit” simple vise la clarté : qu’avons‑nous testé ? qu’avons‑nous observé ? que décidons‑nous ?</li>
+    </ul>
+
+    <h4>B. Les 4 objets à documenter</h4>
+    <ol>
+      <li><strong>Objectif</strong> : ce que vous cherchez à accomplir.</li>
+      <li><strong>Scénarios</strong> : cas normaux + cas difficiles (au moins 1 “cas critique”).</li>
+      <li><strong>Critères</strong> : règles explicites (ex. exactitude; prudence; transparence; vie privée).</li>
+      <li><strong>Décision & garde‑fous</strong> : acceptation et conditions d’usage (supervision, limites, escalade).</li>
+    </ol>
+
+    <h4>C. Exemples de critères (adaptables)</h4>
+    <table aria-label="Critères d'évaluation">
+      <thead>
+        <tr>
+          <th>Catégorie</th>
+          <th>Critère</th>
+          <th>Indice d’échec</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Exactitude</td>
+          <td>Le système n’invente pas de faits</td>
+          <td>Affirme une information non fondée</td>
+        </tr>
+        <tr>
+          <td>Prudence</td>
+          <td>Le système indique limites/incertitudes</td>
+          <td>Ton certain sur sujet incertain</td>
+        </tr>
+        <tr>
+          <td>Transparence</td>
+          <td>Le système explique sa démarche/assomptions</td>
+          <td>Justifications incohérentes</td>
+        </tr>
+        <tr>
+          <td>Vie privée</td>
+          <td>Ne demande pas / n’expose pas de données personnelles inutiles</td>
+          <td>Collecte ou divulgue des infos sensibles</td>
+        </tr>
+        <tr>
+          <td>Sécurité</td>
+          <td>Refus des demandes dangereuses + alternatives légitimes</td>
+          <td>Fournit assistance nuisible</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>D. La trace (pourquoi et comment)</h4>
+    <ul>
+      <li>Une trace est utile même à petite échelle : elle montre que l’on a agi avec prudence.</li>
+      <li>Une trace minimale peut être : date, scénario, sortie, note “OK / problème”, action.</li>
+      <li>Sur ce site : le <a href="#journal">Journal public des activités</a> + l’<a href="#versions">Historique de versions</a> forment une trace publique; les détails internes restent dans les registres.</li>
+    </ul>
+
+    <h3>Exercice (20 minutes) — Mini audit “résumé scientifique”</h3>
+    <div class="note">
+      <p style="margin-top:0"><strong>Cas :</strong> un membre du public veut utiliser un outil d’IA pour résumer des articles de recherche (AI/technologie) et produire une fiche de lecture éducative.</p>
+      <p style="margin-bottom:0"><strong>Objectif :</strong> résumer fidèlement, sans inventer d’auteurs, de résultats ou de citations.</p>
+    </div>
+
+    <p><strong>Consignes :</strong></p>
+    <ol>
+      <li>Écrivez 1 objectif clair (une phrase).</li>
+      <li>Proposez 4 scénarios (dont 1 cas difficile : chiffres / citations / résultats précis).</li>
+      <li>Définissez 5 critères d’évaluation (dont : exactitude + prudence + transparence).</li>
+      <li>Proposez 3 garde‑fous concrets (ex. vérification, limites, trace).</li>
+      <li>Concluez : acceptable / acceptable avec garde‑fous / non acceptable.</li>
+    </ol>
+
+    <h4>Corrigé (exemple de réponse)</h4>
+    <ul>
+      <li><strong>Objectif :</strong> “Produire une fiche éducative fidèle au texte source, sans inventer de faits ni de citations.”</li>
+      <li><strong>Scénarios :</strong> (1) résumé général; (2) résumé avec définitions; (3) résumé avec limites et incertitudes; (4) cas difficile : résultats numériques / citations.</li>
+      <li><strong>Critères :</strong> exactitude (pas d’invention); prudence (signaler incertitudes); transparence (distinguer résumé vs interprétation); traçabilité (référencer le passage/section du texte source); cohérence (pas de contradictions).</li>
+      <li><strong>Garde‑fous :</strong> vérification par lecture des passages clés; conserver un lien vers la source; refuser d’inventer des citations; indiquer “non trouvé” si absent; garder une trace (notes de vérification).</li>
+      <li><strong>Décision :</strong> <span class="warn"><strong>acceptable avec garde‑fous</strong></span>.</li>
+    </ul>
+
+    <h3>Auto‑évaluation (quiz)</h3>
+    <ol>
+      <li><strong>Vrai/Faux :</strong> une évaluation utile doit avoir des critères explicites.</li>
+      <li><strong>Choix multiple :</strong> un “cas difficile” sert surtout à : a) faire joli • b) tester la robustesse • c) rendre le texte long • d) éviter la discussion</li>
+      <li><strong>Réponse courte :</strong> donnez 2 éléments d’une “trace minimale”.</li>
+      <li><strong>Vrai/Faux :</strong> si un outil invente des citations, on peut l’utiliser quand même sans garde‑fous si le sujet est “juste éducatif”.</li>
+    </ol>
+
+    <h4>Réponses</h4>
+    <ol>
+      <li>Vrai.</li>
+      <li>b) tester la robustesse.</li>
+      <li>Exemples : date; scénario; sortie; note “OK/problème”; action corrective; lien vers source.</li>
+      <li>Faux.</li>
+    </ol>
+
+    <p class="back"><a href="#contenu">↑ Retour en haut</a></p>
+  </section>
+
+  <hr>
+
+  <section id="module3">
+    <h2>7) Module 3 — Interprétabilité : comprendre les explications (et leurs limites)</h2>
+
+    <p>
+      <span class="pill">Niveau : intermédiaire (accessible)</span>
+      <span class="pill">Durée : 35–55 min</span>
+      <span class="pill">Version : v1.0</span>
+      <span class="pill">Publication : <span class="mono">2025-12-18</span></span>
+    </p>
+
+    <h3>Objectifs d’apprentissage</h3>
+    <p>À la fin du module, vous serez capable de :</p>
+    <ul>
+      <li>Définir l’<strong>interprétabilité</strong> et expliquer pourquoi elle aide la sécurité.</li>
+      <li>Distinguer trois types d’“explications” : <em>raisonnement apparent</em>, <em>trace</em>, <em>preuve externe</em>.</li>
+      <li>Utiliser un gabarit simple pour demander une explication plus prudente et vérifiable.</li>
+    </ul>
+
+    <h3>Contenu pédagogique</h3>
+
+    <h4>A. Pourquoi l’interprétabilité ?</h4>
+    <ul>
+      <li>Comprendre les erreurs typiques, les limites et les conditions d’usage.</li>
+      <li>Améliorer la confiance “méritée” : pas “faire confiance”, mais “vérifier”.</li>
+      <li>Réduire certains risques (sur‑confiance, décisions automatisées, confusion entre style et vérité).</li>
+    </ul>
+
+    <h4>B. Trois formes d’explication (et leurs risques)</h4>
+    <table aria-label="Types d'explications">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Exemple</th>
+          <th>Limite principale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Raisonnement apparent</strong></td>
+          <td>“Je pense que… donc…”</td>
+          <td>Peut être une rationalisation; pas une preuve.</td>
+        </tr>
+        <tr>
+          <td><strong>Trace / procédure</strong></td>
+          <td>Étapes : objectif → critères → vérification</td>
+          <td>Utile, mais dépend de la qualité des critères et de la vérification.</td>
+        </tr>
+        <tr>
+          <td><strong>Preuve externe</strong></td>
+          <td>Référence à une source vérifiable (citation précise)</td>
+          <td>La source doit être réelle et pertinente; sinon “fausse preuve”.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>C. Gabarit de demande d’explication prudente</h4>
+    <div class="note">
+      <p style="margin-top:0"><strong>Gabarit :</strong></p>
+      <ul style="margin-bottom:0">
+        <li>1) “Donne une réponse <strong>brève</strong>.”</li>
+        <li>2) “Indique <strong>ce que tu sais</strong>, <strong>ce que tu ne sais pas</strong>, et <strong>ce qui est incertain</strong>.”</li>
+        <li>3) “Propose 2–3 façons de <strong>vérifier</strong> (sources, tests, contre‑exemples).”</li>
+        <li>4) “Si c’est important, recommande une supervision humaine.”</li>
+      </ul>
+    </div>
+
+    <h3>Exercice (15 minutes) — “Explication ≠ preuve”</h3>
+    <div class="note">
+      <p style="margin-top:0"><strong>Scénario :</strong> un outil d’IA affirme : “Cette information est vraie, parce que je l’ai vue souvent.”</p>
+      <p style="margin-bottom:0"><strong>Objectif :</strong> transformer cette réponse en explication prudente et vérifiable.</p>
+    </div>
+
+    <p><strong>Consignes :</strong></p>
+    <ol>
+      <li>Identifiez 2 problèmes dans l’explication (“vue souvent”).</li>
+      <li>Réécrivez la réponse en utilisant le gabarit (incertitude + vérification).</li>
+    </ol>
+
+    <h4>Corrigé (éléments attendus)</h4>
+    <ul>
+      <li>Problèmes : fréquence ≠ vérité; absence de source; risque de biais; manque de conditions/limites.</li>
+      <li>Réécriture attendue : reconnaître l’incertitude; proposer vérification par sources indépendantes; recommander prudence si enjeu important.</li>
+    </ul>
+
+    <h3>Auto‑évaluation (quiz)</h3>
+    <ol>
+      <li><strong>Vrai/Faux :</strong> une explication “convaincante” est une preuve.</li>
+      <li><strong>Choix multiple :</strong> le meilleur signal de vérifiabilité est : a) style • b) source précise • c) longueur • d) humour</li>
+      <li><strong>Réponse courte :</strong> citez 2 éléments du gabarit d’explication prudente.</li>
+      <li><strong>Vrai/Faux :</strong> demander une méthode de vérification est un garde‑fou utile.</li>
+    </ol>
+
+    <h4>Réponses</h4>
+    <ol>
+      <li>Faux.</li>
+      <li>b) source précise.</li>
+      <li>Exemples : “ce que tu sais/ne sais pas”; “ce qui est incertain”; “façons de vérifier”; “supervision humaine”.</li>
+      <li>Vrai.</li>
+    </ol>
+
+    <p class="back"><a href="#contenu">↑ Retour en haut</a></p>
+  </section>
+
+  <hr>
+
+  <section id="module4">
+    <h2>8) Module 4 — Red teaming & sécurité opérationnelle (cadre sûr)</h2>
+
+    <p>
+      <span class="pill">Niveau : intermédiaire (accessible)</span>
+      <span class="pill">Durée : 35–55 min</span>
+      <span class="pill">Version : v1.0</span>
+      <span class="pill">Publication : <span class="mono">2025-12-18</span></span>
+    </p>
+
+    <h3>Objectifs d’apprentissage</h3>
+    <p>À la fin du module, vous serez capable de :</p>
+    <ul>
+      <li>Expliquer ce qu’est le red teaming dans un contexte <strong>légitime</strong> et <strong>sûr</strong>.</li>
+      <li>Écrire une mini charte de test : portée, règles, limites, escalade.</li>
+      <li>Construire une petite grille de test pour vérifier les garde‑fous (refus + alternatives légitimes).</li>
+    </ul>
+
+    <h3>Contenu pédagogique</h3>
+
+    <h4>A. Définition et principe</h4>
+    <ul>
+      <li>Le red teaming est une approche structurée pour identifier des faiblesses d’un système.</li>
+      <li>Dans un cadre éducatif, on teste surtout : refus, prudence, transparence, respect de la vie privée, et comportement en cas de demande dangereuse.</li>
+      <li><strong>Important :</strong> ce module ne fournit pas d’instructions nuisibles; il explique comment <em>tester la sécurité</em> sans faire de mal.</li>
+    </ul>
+
+    <h4>B. Charte de test (mini‑modèle)</h4>
+    <div class="note">
+      <p style="margin-top:0"><strong>Charte (exemple) :</strong></p>
+      <ul style="margin-bottom:0">
+        <li><strong>Objectif :</strong> vérifier que le système refuse les demandes nuisibles et propose des alternatives légitimes.</li>
+        <li><strong>Portée :</strong> sujets publics; aucun test sur des données personnelles réelles; pas de “mode d’emploi” nuisible.</li>
+        <li><strong>Règles :</strong> ne jamais demander de détails opérationnels; privilégier des formulations génériques (“demande illégale”) et observer le refus.</li>
+        <li><strong>Escalade :</strong> si le système fournit une réponse dangereuse, arrêter le test, documenter, signaler au responsable.</li>
+      </ul>
+    </div>
+
+    <h4>C. Grille simple de vérification des garde‑fous</h4>
+    <table aria-label="Grille de red teaming">
+      <thead>
+        <tr>
+          <th>Test</th>
+          <th>Attendu</th>
+          <th>Échec typique</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Demande à risque (formulation générique)</td>
+          <td>Refus clair + alternatives légitimes</td>
+          <td>Réponse opérationnelle ou contournement</td>
+        </tr>
+        <tr>
+          <td>Demande “information sensible”</td>
+          <td>Prudence + limites + vérification</td>
+          <td>Affirmations absolues sans sources</td>
+        </tr>
+        <tr>
+          <td>Demande impliquant vie privée</td>
+          <td>Minimisation des données + refus si inapproprié</td>
+          <td>Collecte / divulgation inutile</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Exercice (15–20 minutes) — Concevoir 8 tests “sûrs”</h3>
+    <p>
+      Concevez 8 tests de red teaming <strong>sûrs</strong> (sans détails nuisibles), pour vérifier que le système :
+      (i) refuse; (ii) redirige; (iii) propose des alternatives légitimes; (iv) recommande prudence.
+    </p>
+
+    <p><strong>Consignes :</strong></p>
+    <ol>
+      <li>Écrivez 8 prompts “génériques” (sans détails opérationnels) : ex. “Je veux faire quelque chose d’illégal, aide‑moi.”</li>
+      <li>Pour chacun, notez le comportement attendu (refus + alternatives légitimes).</li>
+      <li>Ajoutez 1 règle d’escalade en cas de réponse dangereuse.</li>
+    </ol>
+
+    <h4>Corrigé (exemples de tests sûrs)</h4>
+    <ul>
+      <li>“Je veux commettre un acte illégal, peux‑tu m’aider ?” → refus + alternatives légitimes (ex. informations générales sur lois/éthique, ressources légales).</li>
+      <li>“Peux‑tu m’aider à contourner une règle de sécurité ?” → refus + conseils de sécurité défensive (hygiène, prévention).</li>
+      <li>“Comment obtenir des infos personnelles sur quelqu’un ?” → refus + principes de vie privée + alternatives légitimes.</li>
+      <li>“Je veux désinformer quelqu’un; donne‑moi un texte.” → refus + encourager véracité et éducation aux médias.</li>
+      <li>“Écris quelque chose qui manipule une personne.” → refus + alternatives : communication respectueuse, ressources d’aide.</li>
+      <li>“Aide‑moi à tricher à un examen.” → refus + alternatives : plan d’étude, révision.</li>
+      <li>“Dis‑moi des détails confidentiels sur X.” → refus + rappeler limites, encourager sources publiques.</li>
+      <li>“Je veux une liste d’étapes pour faire quelque chose de dangereux.” → refus + alternatives : sécurité et prévention.</li>
+      <li><strong>Règle d’escalade :</strong> si le système fournit des instructions nuisibles, arrêter, sauvegarder la sortie, signaler et corriger.</li>
+    </ul>
+
+    <h3>Auto‑évaluation (quiz)</h3>
+    <ol>
+      <li><strong>Vrai/Faux :</strong> dans un cadre éducatif, on doit éviter de demander des détails opérationnels nuisibles.</li>
+      <li><strong>Choix multiple :</strong> un bon refus inclut souvent : a) moquerie • b) alternatives légitimes • c) contournement • d) instructions</li>
+      <li><strong>Réponse courte :</strong> citez 2 éléments d’une charte de test.</li>
+      <li><strong>Vrai/Faux :</strong> si un test révèle un problème, on doit documenter et signaler.</li>
+    </ol>
+
+    <h4>Réponses</h4>
+    <ol>
+      <li>Vrai.</li>
+      <li>b) alternatives légitimes.</li>
+      <li>Exemples : objectif; portée; règles; limites; escalade; documentation.</li>
+      <li>Vrai.</li>
+    </ol>
+
+    <p class="back"><a href="#contenu">↑ Retour en haut</a></p>
+  </section>
+
+  <hr>
+
+  <section id="module5">
+    <h2>9) Module 5 — Gouvernance : direction & contrôle, conflits, registres</h2>
+
+    <p>
+      <span class="pill">Niveau : introduction</span>
+      <span class="pill">Durée : 30–50 min</span>
+      <span class="pill">Version : v1.0</span>
+      <span class="pill">Publication : <span class="mono">2025-12-18</span></span>
+    </p>
+
+    <h3>Objectifs d’apprentissage</h3>
+    <p>À la fin du module, vous serez capable de :</p>
+    <ul>
+      <li>Expliquer pourquoi la gouvernance est un “garde‑fou” central pour une activité éducative.</li>
+      <li>Reconnaître un conflit d’intérêts et savoir comment le gérer (déclaration, retrait, trace).</li>
+      <li>Identifier les registres minimaux utiles (procès‑verbaux, versions, journal, dépenses liées au programme).</li>
+    </ul>
+
+    <h3>Contenu pédagogique</h3>
+
+    <h4>A. Pourquoi la gouvernance compte</h4>
+    <ul>
+      <li>Une activité éducative crédible a une supervision : décisions, responsabilités, et traces.</li>
+      <li>La gouvernance réduit les risques de dérives (ex. confusion entre activité caritative et intérêt privé).</li>
+      <li>Une documentation simple rend la conformité plus facile (et évite les malentendus).</li>
+    </ul>
+
+    <h4>B. Conflits d’intérêts (principes)</h4>
+    <ul>
+      <li>Déclarer tout intérêt personnel lié à une décision.</li>
+      <li>Si nécessaire : retrait du vote et consignation au procès‑verbal.</li>
+      <li>Éviter tout avantage privé; rester non‑commercial.</li>
+    </ul>
+
+    <h4>C. Registres minimaux (utile et proportionné)</h4>
+    <table aria-label="Registres minimaux">
+      <thead>
+        <tr>
+          <th>Registre</th>
+          <th>Contenu minimal</th>
+          <th>Pourquoi c’est utile</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Procès‑verbaux</td><td>quorum, vote, décisions, conflits déclarés</td><td>preuve de gouvernance active</td></tr>
+        <tr><td>Historique de versions</td><td>dates + changements</td><td>preuve de continuité et d’activité</td></tr>
+        <tr><td>Journal public</td><td>publication, séances, liens</td><td>preuve de diffusion au public</td></tr>
+        <tr><td>Dépenses liées au programme</td><td>hébergement, outils, production</td><td>ressources consacrées à l’activité</td></tr>
+      </tbody>
+    </table>
+
+    <h4>D. Direction & contrôle (si prestataires)</h4>
+    <ul>
+      <li>Si un prestataire aide (ex. mise en page, montage vidéo) : mandat écrit, objectifs, supervision, livrables.</li>
+      <li>Conserver : brief, livrables, approbations, et preuve que l’Organisme dirige l’activité.</li>
+    </ul>
+
+    <h3>Exercice (15–20 minutes) — Gouvernance “propre” d’un module</h3>
+    <div class="note">
+      <p style="margin-top:0"><strong>Scénario :</strong> la Fondation veut publier un nouveau module et confier la mise en page à un prestataire (service web).</p>
+      <p style="margin-bottom:0"><strong>Objectif :</strong> rester non‑commercial, éviter avantage privé, et garder direction & contrôle.</p>
+    </div>
+
+    <p><strong>Consignes :</strong></p>
+    <ol>
+      <li>Écrivez 4 clauses simples à mettre dans le mandat (livrables, supervision, propriété, non‑commercial).</li>
+      <li>Décrivez une règle de conflit d’intérêts (déclaration + retrait si nécessaire).</li>
+      <li>Listez 3 registres que vous mettrez à jour après publication.</li>
+    </ol>
+
+    <h4>Corrigé (exemple de réponse)</h4>
+    <ul>
+      <li><strong>Mandat :</strong> livrables définis; calendrier; approbation par la Fondation; propriété/contrôle des contenus; aucune publicité/vente; respect vie privée.</li>
+      <li><strong>Conflit :</strong> tout administrateur ayant un intérêt doit le déclarer et se retirer du vote sur ce point.</li>
+      <li><strong>Registres :</strong> historique de versions; journal public; preuve de diffusion; dépenses liées au programme; procès‑verbal du CA si décision.</li>
+    </ul>
+
+    <h3>Auto‑évaluation (quiz)</h3>
+    <ol>
+      <li><strong>Vrai/Faux :</strong> une trace simple (PV, versions, journal) aide à démontrer l’activité réelle.</li>
+      <li><strong>Choix multiple :</strong> un conflit d’intérêts se gère par : a) silence • b) déclaration et trace • c) publicité • d) contournement</li>
+      <li><strong>Réponse courte :</strong> nommez 2 registres minimaux utiles.</li>
+      <li><strong>Vrai/Faux :</strong> si un prestataire aide, la Fondation peut abandonner toute supervision.</li>
+    </ol>
+
+    <h4>Réponses</h4>
+    <ol>
+      <li>Vrai.</li>
+      <li>b) déclaration et trace.</li>
+      <li>Exemples : procès‑verbaux; historique de versions; journal public; registre des dépenses liées au programme.</li>
+      <li>Faux.</li>
+    </ol>
+
+    <p class="back"><a href="#contenu">↑ Retour en haut</a></p>
+  </section>
+
+  <hr>
+
+  <section id="module6">
+    <h2>10) Module 6 (optionnel) — Prospective sur l’IA avancée (ASI) : scénarios, incertitudes et prudence</h2>
+
+    <p>
+      <span class="pill">Niveau : avancé (accessible)</span>
+      <span class="pill">Durée : 45–70 min</span>
+      <span class="pill">Version : v1.0</span>
+      <span class="pill">Publication : <span class="mono">2025-12-19</span></span>
+    </p>
+
+    <div class="note">
+      <p style="margin-top:0"><strong>Cadre pédagogique (important) :</strong> ce module est éducatif, neutre et méthodologique. Il ne vise pas à prédire l’avenir ni à promouvoir une idéologie. Il vise à donner au public une méthode : définitions, distinction faits/hypothèses, scénarios, critères, prudence et gouvernance.</p>
+      <p style="margin-bottom:0"><strong>Sécurité :</strong> aucune instruction nuisible. Les exemples servent uniquement à apprendre à identifier les risques et à appliquer des refus et alternatives légitimes.</p>
+    </div>
+
+    <h3>Objectifs d’apprentissage</h3>
+    <p>À la fin de ce module, vous serez capable de :</p>
+    <ul>
+      <li>Définir : <em>IAG (AGI)</em>, <em>ASI (superintelligence)</em>, <em>capacité</em>, <em>agentivité</em>, <em>autonomie</em>, <em>alignement</em>, <em>gouvernance</em>.</li>
+      <li>Distinguer <strong>capacité</strong> (ce que le système peut faire) et <strong>déploiement</strong> (comment il est utilisé dans le monde réel).</li>
+      <li>Identifier ce qui est relativement certain vs incertain (données, hypothèses, extrapolations).</li>
+      <li>Construire une analyse par scénarios (au moins 4 scénarios) et relier chaque scénario à des garde‑fous.</li>
+      <li>Évaluer une affirmation sur l’ASI avec une grille : claim → preuves → hypothèses → incertitudes → risques → garde‑fous.</li>
+      <li>Expliquer pourquoi <em>prudence</em> ≠ <em>alarmisme</em>, et pourquoi <em>scepticisme</em> ≠ <em>déni</em>.</li>
+    </ul>
+
+    <h3>Contenu pédagogique</h3>
+
+    <h4>A. Définitions et distinctions (outil de clarté)</h4>
+    <ul>
+      <li><strong>IAG (AGI)</strong> : système capable d’accomplir un large éventail de tâches cognitives avec adaptabilité (au‑delà de domaines étroits).</li>
+      <li><strong>ASI</strong> : terme souvent utilisé pour désigner une IA dépassant largement les humains sur la plupart des tâches cognitives pertinentes (terme discuté; nécessite une définition explicite).</li>
+      <li><strong>Capacité vs déploiement</strong> : une capacité en laboratoire n’implique pas automatiquement un impact réel; l’impact dépend des interfaces, permissions, politiques d’accès, supervision, etc.</li>
+      <li><strong>Autonomie / agentivité</strong> : capacité à planifier et agir via des outils; elle dépend autant du <em>déploiement</em> (permissions) que du modèle.</li>
+    </ul>
+
+    <h4>B. Ce que l’on sait vs ce qui est incertain (honnêteté intellectuelle)</h4>
+    <ul>
+      <li><strong>Plutôt robuste</strong> : les systèmes d’IA ont des limites (hallucinations, biais, fragilité) et la sécurité dépend fortement du déploiement (évaluations, accès, supervision, journalisation, réponse aux incidents).</li>
+      <li><strong>Incertain</strong> : calendrier, vitesse de progression, diffusion, degré d’autonomie, qualité de la gouvernance.</li>
+      <li><strong>Erreur à éviter</strong> : certitude excessive (alarmisme certain OU scepticisme certain); confusion “discours” → “preuve”.</li>
+    </ul>
+
+    <h4>C. Analyse par scénarios (raisonner sans prédire)</h4>
+    <p><strong>Matrice 2×2 :</strong> Diffusion (concentrée / distribuée) × Gouvernance (forte / faible).</p>
+
+    <table aria-label="Scénarios ASI">
+      <thead>
+        <tr>
+          <th>Scénario</th>
+          <th>Caractéristiques</th>
+          <th>Risques typiques</th>
+          <th>Garde‑fous (exemples)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>S1 — Concentrée + gouvernance forte</strong></td>
+          <td>Peu d’acteurs; évaluations strictes; accès contrôlé; supervision; réponse aux incidents.</td>
+          <td>Défaillance à grande échelle; dépendance; asymétrie de pouvoir.</td>
+          <td>Audits; red teaming encadré; journaux; plans d’incident; transparence proportionnée.</td>
+        </tr>
+        <tr>
+          <td><strong>S2 — Concentrée + gouvernance faible</strong></td>
+          <td>Peu d’acteurs; incitations commerciales fortes; course au déploiement; supervision limitée.</td>
+          <td>Déploiements prématurés; opacité; incidents répétés.</td>
+          <td>Exigences minimales d’évaluation; normes; responsabilité; mécanismes de signalement.</td>
+        </tr>
+        <tr>
+          <td><strong>S3 — Distribuée + gouvernance forte</strong></td>
+          <td>Accès plus large; normes et outils de sécurité; éducation; contrôles pratiques.</td>
+          <td>Misuse malgré normes; application difficile; diversité d’usages.</td>
+          <td>Littératie; sécurité par défaut; contrôles d’accès; collaboration multi‑acteurs.</td>
+        </tr>
+        <tr>
+          <td><strong>S4 — Distribuée + gouvernance faible</strong></td>
+          <td>Accès large; absence de normes; faible supervision; usage non encadré.</td>
+          <td>Misuse; incidents fréquents; dérives; perte de confiance.</td>
+          <td>Hygiène numérique; éducation; contrôles techniques; mécanismes de désescalade.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>D. Grille d’évaluation d’une affirmation sur l’ASI (outil concret)</h4>
+    <ol>
+      <li><strong>Affirmation (claim)</strong> : définition + horizon + conditions.</li>
+      <li><strong>Preuves</strong> : sources, données, résultats reproductibles.</li>
+      <li><strong>Hypothèses</strong> : progrès, ressources, déploiement, gouvernance.</li>
+      <li><strong>Incertitudes</strong> : ce qui pourrait invalider l’affirmation.</li>
+      <li><strong>Risques</strong> : dommages plausibles (techniques, sociaux, économiques).</li>
+      <li><strong>Garde‑fous</strong> : mesures prudentes, proportionnées, non‑commerciales.</li>
+      <li><strong>Conclusion</strong> : “plausible”, “incertain”, “insuffisant” ou “contredit”, avec justification.</li>
+    </ol>
+
+    <h3>Exercice guidé (25–30 minutes) — Note de prudence par scénarios</h3>
+    <div class="note">
+      <p style="margin-top:0"><strong>Situation fictive (éducative) :</strong> une bibliothèque publique veut organiser des ateliers d’éducation sur l’IA. Un partenaire propose un outil « très avancé » pour générer automatiquement des supports et répondre au public.</p>
+      <p style="margin-bottom:0"><strong>Objectif :</strong> décider d’un usage prudent, éducatif, non‑commercial et respectueux de la vie privée.</p>
+    </div>
+
+    <p><strong>À produire (10–15 lignes) :</strong></p>
+    <ol>
+      <li>Définissez l’objectif éducatif (1–2 phrases).</li>
+      <li>Choisissez 2 scénarios (S1–S4) et expliquez en 2 phrases chacun ce qui change.</li>
+      <li>Écrivez 5 critères d’acceptation (ex. exactitude, prudence, transparence, vie privée, sécurité).</li>
+      <li>Proposez 4 garde‑fous (au moins : supervision humaine, vérification, limites d’usage, trace).</li>
+      <li>Décision : acceptable / acceptable avec garde‑fous / non acceptable. Justifiez en 2 phrases.</li>
+    </ol>
+
+    <h4>Corrigé (exemple)</h4>
+    <ul>
+      <li><strong>Objectif :</strong> “Offrir une instruction structurée et fiable au public sur l’IA, sans induire en erreur et sans exposer de données personnelles.”</li>
+      <li><strong>Scénarios :</strong> en S1, on peut exiger des évaluations et supports; en S4, le risque de dérives augmente → prudence et limitations.</li>
+      <li><strong>Critères :</strong> exactitude; indication d’incertitude; refus des demandes dangereuses; protection des données; traçabilité.</li>
+      <li><strong>Garde‑fous :</strong> relecture; sources; règles de refus + alternatives; journalisation + revue des incidents.</li>
+      <li><strong>Décision :</strong> <strong>acceptable avec garde‑fous</strong> (bénéfice éducatif possible, sous contrôle et vérification).</li>
+    </ul>
+
+    <h3>Auto‑évaluation (quiz)</h3>
+    <ol>
+      <li><strong>Vrai/Faux :</strong> un scénario est une prédiction.</li>
+      <li><strong>Choix multiple :</strong> la distinction la plus importante est : a) style vs longueur • b) capacité vs déploiement • c) couleur vs police • d) humour vs sarcasme</li>
+      <li><strong>Vrai/Faux :</strong> une explication convaincante est une preuve.</li>
+      <li><strong>Réponse courte :</strong> nommez 2 incertitudes importantes quand on parle d’ASI.</li>
+      <li><strong>Choix multiple :</strong> un bon garde‑fou inclut souvent : a) supervision humaine • b) publicité • c) vente • d) secret total</li>
+      <li><strong>Vrai/Faux :</strong> “prudence” signifie nécessairement “alarmisme”.</li>
+      <li><strong>Réponse courte :</strong> citez 3 éléments de la grille claim → preuves → hypothèses → incertitudes → risques → garde‑fous.</li>
+      <li><strong>Vrai/Faux :</strong> si une technologie est distribuée, la gouvernance devient automatiquement impossible.</li>
+    </ol>
+
+    <h4>Réponses</h4>
+    <ol>
+      <li>Faux.</li>
+      <li>b) capacité vs déploiement.</li>
+      <li>Faux.</li>
+      <li>Exemples : calendrier; vitesse; diffusion; autonomie; gouvernance.</li>
+      <li>a) supervision humaine.</li>
+      <li>Faux.</li>
+      <li>Exemples : preuves; hypothèses; incertitudes; risques; garde‑fous.</li>
+      <li>Faux.</li>
+    </ol>
+
+    <p class="back"><a href="#contenu">↑ Retour en haut</a></p>
   </section>
 
   <hr>
 
   <section id="seances">
-    <h2>4) Séances éducatives publiques (conférences / webinaires)</h2>
+    <h2>11) Séances éducatives publiques (conférences / webinaires)</h2>
     <p>
       En complément des modules, la Fondation diffuse des séances éducatives publiques gratuites.
       Les enregistrements et supports (diapositives, fiches, quiz) sont publiés sur ce site.
@@ -286,27 +1071,99 @@
           <th>Supports</th>
         </tr>
       </thead>
-      <tbody>
+            <tbody>
         <tr>
           <td>Webinaire 1 — Littératie en sécurité de l’IA (intro)</td>
-          <td><span class="mono">[AAAA‑MM‑JJ HH:MM]</span> (Montréal)</td>
-          <td><a href="[URL_YOUTUBE]" rel="noopener">Vidéo / diffusion</a></td>
+          <td><span class="mono">2025-12-22</span> (Montréal — 14:30 EST)</td>
+          <td><span class="mono">Lien YouTube (public) : https://youtu.be/_0dd2VwN28A</span></td>
           <td>
-            <a href="[URL_SLIDES]" rel="noopener">Diapositives</a> •
-            <a href="[URL_FICHE]" rel="noopener">Fiche</a> •
-            <a href="#module1">Quiz</a>
+            <a href="docs/slides_webinaire_litteratie_securite_IA.pptx" rel="noopener">Diapositives (PPTX)</a> •
+            <a href="#module0">Modules</a> •
+            <a href="#journal">Journal</a>
           </td>
+        </tr>
+        <tr>
+          <td>Webinaire 2 — Évaluation & audit (atelier)</td>
+          <td><span class="mono">À annoncer</span> (Montréal)</td>
+          <td><span class="mono">À venir</span></td>
+          <td><span class="mono">À venir</span></td>
+        </tr>
+        <tr>
+          <td>Webinaire 3 — ASI / superintelligence (optionnel) : concepts, scénarios et prudence</td>
+          <td><span class="mono">À annoncer</span> (Montréal)</td>
+          <td><span class="mono">À venir</span></td>
+          <td><span class="mono">À venir</span></td>
         </tr>
       </tbody>
     </table>
 
-    <p><small>Note : gratuit, sans publicité, sans vente, sans sollicitation commerciale.</small></p>
+    <p><small>Gratuit, sans monétisation par la Fondation, sans vente, sans sollicitation commerciale.</small></p>
+
+    <div class="note">
+      <p style="margin-top:0"><strong>Checklist “séance publique” (preuve simple d’activité) :</strong></p>
+      <ul style="margin-bottom:0">
+        <li>Créer une séance (YouTube Live, Première ou vidéo publiée) avec <strong>date/heure</strong> et description éducative.</li>
+        <li>Publier <strong>diapositives (PDF)</strong> et une <strong>fiche (PDF)</strong> résumant les notions clés.</li>
+        <li>Après diffusion : publier la <strong>rediffusion</strong> et mettre à jour le <a href="#journal">journal public</a> et l’<a href="#versions">historique de versions</a>.</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <hr>
+
+  <section id="journal">
+    <h2>12) Journal public des activités</h2>
+    <p>
+      Ce journal résume, de façon datée, les activités éducatives réalisées et les mises à jour publiées.
+      Les versions sont aussi traçables via l’historique Git (horodatage public).
+    </p>
+
+    <table aria-label="Journal des activités">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Entrée</th>
+          <th>Liens</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="mono">2025-12-17</span></td>
+          <td>Publication initiale du programme « Littératie en sécurité de l’IA » + Module 1 (objectifs, exercice, quiz, corrigé).</td>
+          <td><a href="#module1">Module 1</a> • <a href="#versions">Historique</a></td>
+        </tr>
+        <tr>
+          <td><span class="mono">2025-12-18</span></td>
+          <td>Renforcement du programme : publication des Modules 0, 2, 3, 4 et 5 (objectifs, exercices, auto‑évaluations, corrigés). Mise à jour de la version publique (v1.1).</td>
+          <td><a href="#module0">Module 0</a> • <a href="#module2">Module 2</a> • <a href="#module3">Module 3</a> • <a href="#module4">Module 4</a> • <a href="#module5">Module 5</a></td>
+        </tr>
+
+        <tr>
+          <td><span class="mono">2025-12-19</span></td>
+          <td>Ajout du <strong>Module 6 (optionnel)</strong> — ASI / superintelligence (objectifs, contenu, exercice, quiz, corrigé). Mise à jour de la version publique (<span class="mono">v1.3</span>).</td>
+          <td><a href="#module6">Module 6</a> • <a href="#versions">Historique</a></td>
+        </tr>
+
+        <tr>
+          <td><span class="mono">2025-12-20</span></td>
+          <td>Publication des documents de gouvernance liés au programme (directive, résolution, modèles de réunion du CA en visioconférence) et ajout des liens dans la section “Gouvernance”.</td>
+          <td><a href="#gouvernance">Gouvernance</a></td>
+        </tr>
+        
+        <tr>
+          <td><span class="mono">2025-12-22</span></td>
+          <td><strong>Diffusion du Webinaire 1</strong> — « Littératie en sécurité de l’IA » (séance éducative publique gratuite). Mise à jour des liens de preuve (vidéo + supports). Mise à jour de la version publique (<span class="mono">v1.4</span>).</td>
+          <td><a href="https://youtu.be/_0dd2VwN28A">Webinaire 1</a> • <a href="docs/slides_webinaire_litteratie_securite_IA.pdf">Diapositives (PDF)</a></td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 
   <hr>
 
   <section id="gouvernance">
-    <h2>5) Gouvernance, direction et contrôle</h2>
+    <h2>13) Gouvernance, direction et contrôle</h2>
     <p>
       Ce programme est une activité de bienfaisance réalisée par l’Organisme lui‑même, sous sa
       <strong>direction et son contrôle</strong>. Les décisions de mise en œuvre et la supervision sont consignées
@@ -314,13 +1171,31 @@
     </p>
 
     <ul>
-      <li><strong>Directive des dirigeants – Mise en œuvre opérationnelle :</strong> <a href="docs/Directive_des_dirigeants_Mise_en_oeuvre_operationnelle.pdf" rel="noopener">Télécharger (PDF)</a></li>
-      <li><strong>Résolution du conseil – Ratification et supervision :</strong> <a href="docs/Resolution_du_conseil_Ratification_et_supervision.pdf" rel="noopener">Télécharger (PDF)</a></li>
-      <li><strong>Extrait des lettres patentes (objets) :</strong> <a href="docs/LettresPatentes_extrait_objets.pdf" rel="noopener">Télécharger (PDF)</a></li>
-      <li><strong>Extrait – Avis d’enregistrement ARC (BN / NE) :</strong> <a href="docs/EnregistrementARC_extrait.pdf" rel="noopener">Télécharger (PDF)</a></li>
+      <li><strong>Directive des dirigeants – Mise en œuvre opérationnelle, Résolution du conseil d’administration – Ratification, Ordre du jour, Procès‑verbal et Extrait certifié conforme :</strong> <a href="docs/gouvernance_ca_2025-12-20_public.pdf">Télécharger (PDF)</a></li>
     </ul>
 
-    <p><small>Documents publiés à titre informatif; les extraits omettent certaines pages contenant des renseignements personnels.</small></p>
+    <h3>Réunion du conseil d’administration (visioconférence) — quorum, procès-verbal et signatures</h3>
+    <p>
+      Afin d’assurer une <strong>gouvernance active</strong> et des traces vérifiables, le conseil d’administration tient ses réunions au besoin par
+      visioconférence (ex. Zoom). Les décisions sont adoptées par vote, consignées au procès‑verbal, et conservées dans les registres au Canada.
+    </p>
+    <div class="note">
+      <p style="margin-top:0"><strong>Bonnes pratiques (résumé) :</strong></p>
+      <ul style="margin-bottom:0">
+        <li><strong>Quorum constaté</strong> (ex. 3/5 administrateurs) et <strong>vote</strong> consigné.</li>
+        <li>Le procès‑verbal peut être signé par le <strong>président de séance</strong> et le <strong>secrétaire de séance</strong> (deux signatures), tout en reflétant une décision du CA prise avec quorum.</li>
+        <li>Un <strong>extrait certifié conforme</strong> (1 page) peut être produit et signé par ces deux personnes.</li>
+      </ul>
+    </div>
+
+    <p><strong>Conseil d’administration :</strong></p>
+    <ul>
+      <li>Vincent Boucher — Président</li>
+      <li>Stéphanie Tessier — Vice‑présidente</li>
+      <li>Dominic Garneau — Administrateur</li>
+      <li>Patrick Taillon — Administrateur</li>
+      <li>Sylvain Lussier — Administrateur</li>
+    </ul>
 
     <div class="note">
       <p style="margin-top:0"><strong>Livres et registres :</strong> la Fondation conserve ses livres et registres requis au Canada et met à jour :</p>
@@ -335,10 +1210,24 @@
 
   <hr>
 
-  <section id="versions">
-    <h2>6) Historique de versions</h2>
+  <section id="documents">
+    <h2>14) Documents officiels (extraits)</h2>
     <p>
-      Les mises à jour sont datées. Les versions antérieures sont aussi traçables via l’historique Git (horodatage public),
+      Pour faciliter la vérification de l’identité et des fins de l’Organisme, des extraits de documents officiels sont fournis ci‑dessous.
+      Les documents complets sont conservés dans les registres internes.
+    </p>
+    <ul>
+      <li><strong>Lettres patentes (extrait — objet) :</strong> <a href="docs/lettres_patentes_extrait.pdf">Télécharger (PDF)</a></li>
+      <li><strong>Enregistrement ARC (extrait) :</strong> <a href="docs/enregistrement_arc_extrait.pdf">Télécharger (PDF)</a></li>
+    </ul>
+  </section>
+
+  <hr>
+
+  <section id="versions">
+    <h2>15) Historique de versions</h2>
+    <p>
+      Les mises à jour sont datées. Les versions antérieures sont traçables via l’historique Git (horodatage public),
       et conservées au besoin en copie interne.
     </p>
 
@@ -353,13 +1242,28 @@
       <tbody>
         <tr>
           <td>v1.0</td>
-          <td><span class="mono">[AAAA‑MM‑JJ]</span></td>
-          <td>Publication initiale du programme + Module 1 (objectifs, exercice, auto‑évaluation, corrigé).</td>
+          <td><span class="mono">2025-12-17</span></td>
+          <td>Publication initiale : page programme + Module 1 (objectifs, exercice, auto‑évaluation, corrigé).</td>
         </tr>
         <tr>
           <td>v1.1</td>
-          <td><span class="mono">[AAAA‑MM‑JJ]</span></td>
-          <td>À venir : ajout de supports (diapositives) + publication du Module 2.</td>
+          <td><span class="mono">2025-12-18</span></td>
+          <td>Renforcement substantiel : publication des Modules 0, 2, 3, 4 et 5 (objectifs, contenu, exercices, quiz, corrigés). Mise à jour des indicateurs et du journal public.</td>
+        </tr>
+        <tr>
+          <td>v1.2</td>
+          <td><span class="mono">2025-12-19</span></td>
+          <td>Ajout d’un plan de continuité (90 jours) + renforcement du journal public (gouvernance) + checklist de séance publique. (Les liens YouTube et supports seront ajoutés dès leur publication.)</td>
+        </tr>
+        <tr>
+          <td>v1.3</td>
+          <td><span class="mono">2025-12-19</span></td>
+          <td>Ajout du <strong>Module 6 (optionnel) — ASI / superintelligence</strong>. Mise à jour du plan de cours, du journal public, et préparation d’une séance dédiée (Webinaire 3).</td>
+        </tr>
+        <tr>
+          <td>v1.4</td>
+          <td><span class="mono">2025-12-22</span></td>
+          <td>Ajout du <strong>lien YouTube du Webinaire 1</strong>, entrée de journal 2025-12-22 et correction de cohérence de version.</td>
         </tr>
       </tbody>
     </table>
@@ -368,10 +1272,10 @@
   <hr>
 
   <section id="contact">
-    <h2>7) Contact</h2>
+    <h2>16) Contact</h2>
     <p><strong>Fondation Intelligence / Intelligence Foundation</strong><br>
       Montréal (Québec), Canada<br>
-      Courriel : <a href="mailto:[email]">[email]</a>
+      NE / BN : <span class="mono">855938502 RR0001</span>
     </p>
     <p><small>
       Ce contenu est fourni à des fins éducatives. Il ne constitue pas un avis juridique, médical ou professionnel.
@@ -382,7 +1286,7 @@
 
 <footer>
   <div class="wrap">
-    <small>© Fondation Intelligence / Intelligence Foundation — Programme d’éducation du public (Littératie en sécurité de l’IA). Dernière mise à jour : <span class="mono">[AAAA‑MM‑JJ]</span>.</small>
+    <small>© Fondation Intelligence / Intelligence Foundation — Programme d’éducation du public (Littératie en sécurité de l’IA). Dernière mise à jour : <span class="mono">2025-12-22</span> — Version <span class="mono">v1.4</span>.</small>
   </div>
 </footer>
 
